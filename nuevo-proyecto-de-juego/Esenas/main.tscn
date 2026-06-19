@@ -3,6 +3,12 @@
 [ext_resource type="Script" uid="uid://dqc1ajq17ahqk" path="res://Esenas/personaje.gd" id="1_5yulr"]
 [ext_resource type="Texture2D" uid="uid://d2esnflvxjqhs" path="res://Recursos/Personaje_captura_la_bandera-removebg-preview.png" id="2_ep1j6"]
 [ext_resource type="Texture2D" uid="uid://bjtwcb634uaqj" path="res://Recursos/Bandera_de_captura_la_bandera-removebg-preview.png" id="3_ep1j6"]
+[ext_resource type="Texture2D" uid="uid://odhorg2owgdm" path="res://Recursos/Enemigo_captura_la_bandera-removebg-preview.png" id="4_omi13"]
+[ext_resource type="Script" uid="uid://bosnue0m88axg" path="res://Esenas/enemigo.gd" id="4_pq664"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pq664"]
+radius = 20.0
+height = 64.0
 
 [sub_resource type="Animation" id="Animation_omi13"]
 resource_name = "Abajo"
@@ -100,27 +106,48 @@ _data = {
 &"RESET": SubResource("Animation_wb0vw")
 }
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_omi13"]
+radius = 20.09975
+
 [node name="Main" type="Node2D" unique_id=1781043634]
 
-[node name="PERSONAJE" type="CharacterBody2D" parent="." unique_id=1384287914]
+[node name="Personaje" type="CharacterBody2D" parent="." unique_id=1384287914]
 script = ExtResource("1_5yulr")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PERSONAJE" unique_id=64966457]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Personaje" unique_id=64966457]
+position = Vector2(92, 80.5)
+shape = SubResource("CapsuleShape2D_pq664")
 
-[node name="Sprite2D" type="Sprite2D" parent="PERSONAJE" unique_id=1104970627]
-position = Vector2(124, 96)
+[node name="Sprite2D" type="Sprite2D" parent="Personaje" unique_id=1104970627]
+position = Vector2(81, 71.5)
 texture = ExtResource("2_ep1j6")
 hframes = 4
 vframes = 4
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="PERSONAJE" unique_id=865836365]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Personaje" unique_id=865836365]
 libraries/ = SubResource("AnimationLibrary_x8o5y")
 
 [node name="Bandera" type="Sprite2D" parent="." unique_id=93600001]
+position = Vector2(204, 29.300001)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("3_ep1j6")
 
 [node name="Area2D" type="Area2D" parent="Bandera" unique_id=2048145979]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Bandera/Area2D" unique_id=1322135144]
+position = Vector2(7.6293945e-05, -51.499985)
+scale = Vector2(4.84375, 10.9375)
 build_mode = 1
+polygon = PackedVector2Array(0, 0, -9.999999, 0, 9.999999, 0, 9.999999, 9.999999, -9.999999, 9.999999, -9.999999, 0)
+
+[node name="Enemigo" type="CharacterBody2D" parent="." unique_id=183225243]
+script = ExtResource("4_pq664")
+
+[node name="Sprite2D" type="Sprite2D" parent="Enemigo" unique_id=737651202]
+position = Vector2(712.5, 251.80823)
+scale = Vector2(0.30821916, 0.30821916)
+texture = ExtResource("4_omi13")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemigo" unique_id=1663077341]
+position = Vector2(712.5, 251.80823)
+shape = SubResource("CircleShape2D_omi13")
