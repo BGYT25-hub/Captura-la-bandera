@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dqc1ajq17ahqk" path="res://Esenas/personaje.gd" id="1_5yulr"]
 [ext_resource type="Texture2D" uid="uid://d2esnflvxjqhs" path="res://Recursos/Personaje_captura_la_bandera-removebg-preview.png" id="2_ep1j6"]
+[ext_resource type="Texture2D" uid="uid://bjtwcb634uaqj" path="res://Recursos/Bandera_de_captura_la_bandera-removebg-preview.png" id="3_ep1j6"]
 
 [sub_resource type="Animation" id="Animation_omi13"]
 resource_name = "Abajo"
@@ -18,7 +19,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [0, 1, 3, 3]
+"values": [0, 1, 2, 3]
 }
 
 [sub_resource type="Animation" id="Animation_pq664"]
@@ -116,9 +117,10 @@ vframes = 4
 libraries/ = SubResource("AnimationLibrary_x8o5y")
 
 [node name="Bandera" type="Sprite2D" parent="." unique_id=93600001]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("3_ep1j6")
 
-[node name="Area2D" type="Area2D" parent="Bandera" unique_id=439793436]
+[node name="Area2D" type="Area2D" parent="Bandera" unique_id=2048145979]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Bandera/Area2D" unique_id=794818970]
-
-[node name="Sprite2D" type="Sprite2D" parent="Bandera" unique_id=597850258]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Bandera/Area2D" unique_id=1322135144]
+build_mode = 1
