@@ -1,0 +1,101 @@
+[gd_scene format=3 uid="uid://cm25e34rv5utv"]
+
+[ext_resource type="FontFile" uid="uid://cd7misa3ss5lr" path="res://Recursos/AutoSquare.otf" id="1_xhidx"]
+[ext_resource type="Texture2D" uid="uid://c1tp7pqe622b5" path="res://icon.svg" id="2_6nt1d"]
+
+[sub_resource type="Animation" id="Animation_p7vlv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_st6qr"]
+resource_name = "Splash_screen"
+length = 8.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 4, 6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_6nt1d"]
+resource_name = "Splash_screen_label"
+length = 8.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 4, 6, 8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tgga2"]
+_data = {
+&"RESET": SubResource("Animation_p7vlv"),
+&"Splash_screen": SubResource("Animation_st6qr"),
+&"Splash_screen_label": SubResource("Animation_6nt1d")
+}
+
+[node name="SSmain" type="Node2D" unique_id=727453752]
+
+[node name="Control" type="Control" parent="." unique_id=1330965024]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 581.0
+offset_top = 112.0
+offset_right = 621.0
+offset_bottom = 152.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1617740985]
+libraries/ = SubResource("AnimationLibrary_tgga2")
+autoplay = &"Splash_screen_label"
+
+[node name="Label" type="Label" parent="." unique_id=1711947018]
+modulate = Color(1, 1, 1, 0)
+offset_left = 294.0
+offset_top = 76.0
+offset_right = 852.0
+offset_bottom = 309.0
+theme_override_fonts/font = ExtResource("1_xhidx")
+theme_override_font_sizes/font_size = 100
+text = "CAPTURE THE FLAG
+			GAME"
+horizontal_alignment = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=368823419]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(574, 447)
+texture = ExtResource("2_6nt1d")

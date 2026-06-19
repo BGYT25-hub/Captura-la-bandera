@@ -8,7 +8,7 @@ func _ready():
 
 func _physics_process(delta):
 	move_and_collide(movimiento)
-	set_vector(get_node("../Personaje").global_position - global_position)
+	set_vector(get_node("../Bandera").global_position - global_position)
 pass
 
 func set_vector(vector):
