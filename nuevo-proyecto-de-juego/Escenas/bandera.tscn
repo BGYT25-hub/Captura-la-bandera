@@ -3,15 +3,15 @@
 [ext_resource type="Texture2D" uid="uid://bjtwcb634uaqj" path="res://Recursos/Bandera_de_captura_la_bandera-removebg-preview.png" id="1_fvv2s"]
 [ext_resource type="Script" uid="uid://bllibpbtsbf7n" path="res://Escenas/bandera.gd" id="2_qj0r8"]
 
-[node name="Bandera" type="Sprite2D" unique_id=1713552629]
-scale = Vector2(0.2, 0.2)
+[node name="Bandera" type="Sprite2D" unique_id=608585970]
+scale = Vector2(0.43146068, 0.38415313)
 texture = ExtResource("1_fvv2s")
 script = ExtResource("2_qj0r8")
 metadata/_edit_group_ = true
 
-[node name="Area2D" type="Area2D" parent="." unique_id=926922147]
+[node name="Area2D" type="Area2D" parent="." unique_id=1398888964]
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D" unique_id=2052185424]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D" unique_id=288073746]
 position = Vector2(5, -51.500004)
 scale = Vector2(4.84375, 10.9375)
 build_mode = 1

@@ -4,18 +4,25 @@
 [ext_resource type="PackedScene" uid="uid://dvs7kd8dn5u80" path="res://Escenas/personaje.tscn" id="2_7xwpo"]
 [ext_resource type="PackedScene" uid="uid://b66b1twvchpin" path="res://Escenas/enemigo.tscn" id="4_2ia52"]
 [ext_resource type="PackedScene" uid="uid://c5jtna86kqcqy" path="res://Escenas/bandera.tscn" id="4_s2ilj"]
+[ext_resource type="PackedScene" uid="uid://c8ixks6irxc7k" path="res://Escenas/Menu.tscn" id="5_2ia52"]
 
 [node name="Main" type="Node2D" unique_id=1781043634]
 script = ExtResource("1_crgrh")
 
 [node name="Personaje" parent="." unique_id=1758478950 instance=ExtResource("2_7xwpo")]
-position = Vector2(186, 311)
+position = Vector2(161, 311)
 
-[node name="Bandera" parent="." unique_id=1713552629 instance=ExtResource("4_s2ilj")]
-position = Vector2(543, 303.99997)
+[node name="Bandera" parent="." unique_id=608585970 instance=ExtResource("4_s2ilj")]
+position = Vector2(546, 305)
 
 [node name="Enemigo" parent="." unique_id=130290786 instance=ExtResource("4_2ia52")]
-position = Vector2(932, 319)
+position = Vector2(972, 311)
+
+[node name="Menu" parent="." unique_id=725496156 instance=ExtResource("5_2ia52")]
+metadata/_edit_group_ = true
 
 [connection signal="gana" from="Bandera" to="." method="_on_bandera_gana"]
 [connection signal="pierde" from="Bandera" to="." method="_on_bandera_pierde"]
+[connection signal="jugar" from="Menu" to="." method="_on_menu_jugar"]
+[connection signal="rejugar" from="Menu" to="." method="_on_menu_rejugar"]
+[connection signal="salir" from="Menu" to="." method="_on_menu_salir"]
