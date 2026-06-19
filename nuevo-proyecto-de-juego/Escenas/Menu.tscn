@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://c8ixks6irxc7k"]
+
+[node name="Menu" type="Node2D" unique_id=725496156]
+process_mode = 3
+
+[node name="ModalJugar" type="ColorRect" parent="." unique_id=1524845918]
+offset_right = 1151.0
+offset_bottom = 646.0
+color = Color(0.1764706, 0.20784314, 0.39215687, 0.30588236)
+
+[node name="Jugar" type="Button" parent="." unique_id=571800080]
+offset_left = 549.0
+offset_top = 324.0
+offset_right = 639.0
+offset_bottom = 364.0
+text = "Jugar
+"
+
+[node name="Rejugar" type="Button" parent="." unique_id=163696520]
+offset_left = 549.0
+offset_top = 372.0
+offset_right = 639.0
+offset_bottom = 412.0
+text = "Rejugar"
+
+[node name="Salir" type="Button" parent="." unique_id=260712727]
+offset_left = 548.0
+offset_top = 423.0
+offset_right = 638.0
+offset_bottom = 463.0
+text = "Salir"
+
+[connection signal="pressed" from="Jugar" to="." method="_on_jugar_pressed"]
+[connection signal="pressed" from="Rejugar" to="." method="_on_rejugar_pressed"]
+[connection signal="pressed" from="Salir" to="." method="_on_salir_pressed"]

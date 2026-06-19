@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://b66b1twvchpin"]
+
+[ext_resource type="Script" uid="uid://bosnue0m88axg" path="res://Escenas/enemigo.gd" id="1_24lda"]
+[ext_resource type="Texture2D" uid="uid://odhorg2owgdm" path="res://Recursos/Enemigo_captura_la_bandera-removebg-preview.png" id="2_1hbjf"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_omi13"]
+radius = 20.09975
+
+[node name="Enemigo" type="CharacterBody2D" unique_id=130290786]
+script = ExtResource("1_24lda")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=680083435]
+position = Vector2(-1, -2)
+shape = SubResource("CircleShape2D_omi13")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2063467786]
+position = Vector2(1, -5)
+scale = Vector2(0.30821916, 0.30821916)
+texture = ExtResource("2_1hbjf")
+metadata/_edit_group_ = true

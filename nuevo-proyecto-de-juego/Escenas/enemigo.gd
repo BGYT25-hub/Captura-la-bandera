@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 var movimiento = Vector2()
-var velocidad = 3
+var velocidad = 2
 
 func _ready():
 	pass
